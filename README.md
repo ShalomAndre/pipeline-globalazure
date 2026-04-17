@@ -28,11 +28,11 @@ These issues lead to unreliable reports and poor decision-making.
 
 ## Technologies Used
 
-Storage: Azure Blob Storage  
-Platform: Microsoft Fabric  
-Processing: PySpark (Fabric Notebook)  
-Storage Layer: Lakehouse  
-Visualization: Power BI  
+- Storage: Azure Blob Storage  
+- Platform: Microsoft Fabric  
+- Processing: PySpark (Fabric Notebook)  
+- Storage Layer: Lakehouse  
+- Visualization: Power BI  
 
 ---
 
@@ -48,8 +48,22 @@ The dataset includes:
 - quantidade  
 - preco  
 - cidade  
-- data  
+- data
+-  
+```
+storage_account_name = "seu_storage"
+container_name = "seu_container"
+access_key = "sua_chave"
 
+spark.conf.set(
+    f"fs.azure.account.key.{storage_account_name}.blob.core.windows.net",
+    access_key
+)
+```
+
+```
+file_path = f"wasbs://{container_name}@{storage_account_name}.blob.core.windows.net/seu_arquivo.csv"
+```
 ---
 
 ### 2. Data Transformation
@@ -96,8 +110,8 @@ The dashboard includes:
 
 ### 1. Prerequisites
 
-- Microsoft Fabric account  
 - Azure Storage Account (Blob Storage)  
+- Microsoft Fabric account  
 - Power BI access  
 
 ---
@@ -151,7 +165,7 @@ This enables accurate reporting and better decision-making through Power BI dash
 
 ## Author
 
-**Shalom Mundele André**  
+**Shalom André**  
 Microsoft Student Ambassador  
 
 ---
