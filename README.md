@@ -1,4 +1,5 @@
 # Building a pipeline with Microsoft Fabric
+![Loja](techretail.png)
 
 ## Project Overview
 This project demonstrates an ETL (Extract, Transform, Load) pipeline using Microsoft Fabric. The pipeline ingests sales data from Azure Blob Storage, performs data cleaning and transformation using a Fabric Notebook (PySpark), and loads the processed data into a Lakehouse. Finally, a semantic model is created and visualized in Power BI.
@@ -22,7 +23,7 @@ These issues lead to unreliable reports and poor decision-making.
 ---
 
 ## Project Architecture
-
+![Project](architectureretail.png)
 
 ---
 
