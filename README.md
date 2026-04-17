@@ -50,7 +50,7 @@ The dataset includes:
 - preco  
 - cidade  
 - data
--  
+
 ```
 storage_account_name = "seu_storage"
 container_name = "seu_container"
