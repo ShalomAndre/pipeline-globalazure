@@ -1,0 +1,98 @@
+table vendas_tratadas
+	lineageTag: 1fa1a35a-fc9f-4b35-bc5b-ccfd1397e14e
+	sourceLineageTag: [dbo].[vendas_tratadas]
+
+	column id_venda
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ab496ac4-534e-4219-aac9-8a1576b709a8
+		sourceLineageTag: id_venda
+		summarizeBy: sum
+		sourceColumn: id_venda
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_cliente
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1c9cc468-e7b9-4ee9-99d0-b32e5a962433
+		sourceLineageTag: nome_cliente
+		summarizeBy: none
+		sourceColumn: nome_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column produto
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9d23eb74-c1c3-483a-8b00-d1ddfbfffd78
+		sourceLineageTag: produto
+		summarizeBy: none
+		sourceColumn: produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantidade
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 493a2cc4-1391-4444-ab11-596c0c3935d5
+		sourceLineageTag: quantidade
+		summarizeBy: sum
+		sourceColumn: quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column preco_unitario
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ae5516e1-c175-4d11-bc9d-57b4d54d7632
+		sourceLineageTag: preco_unitario
+		summarizeBy: sum
+		sourceColumn: preco_unitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cidade
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fcc6e34a-1fb4-4075-a561-51a72129a41b
+		sourceLineageTag: cidade
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column data
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7d7dbf38-96b8-4504-a4a2-8d6e200187fb
+		sourceLineageTag: data
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+	column coluna_inutil
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 82fd63b4-1fdf-47de-8a31-df2f9606731f
+		sourceLineageTag: coluna_inutil
+		summarizeBy: none
+		sourceColumn: coluna_inutil
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vendas_tratadas = entity
+		mode: directLake
+		source
+			entityName: vendas_tratadas
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
